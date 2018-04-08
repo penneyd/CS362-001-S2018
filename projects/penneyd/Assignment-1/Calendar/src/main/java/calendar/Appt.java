@@ -176,7 +176,7 @@ public class Appt{
 		else if (startYear <= 0)
 			this.valid = false;
 		else {
-			int NumDaysInMonth = CalendarUtil.NumDaysInMonth(startYear, startMonth - 1);
+			int NumDaysInMonth = CalendarUtil.NumDaysInMonth(startYear, startMonth);
 			if (startDay < 1 || startDay > NumDaysInMonth)
 				this.valid = false;
 			else
@@ -270,7 +270,7 @@ public class Appt{
     
     /** Gets emailAddress */
     public String getEmailAddress() {
-        return emailAddress;
+        return description;
     }
     /** Gets description */
     public boolean getValid() {
@@ -300,7 +300,7 @@ public class Appt{
         setRecurDays(recurDays);
         setRecurBy(recurBy);
         setRecurIncrement(recurIncrement);
-        setRecurNumber(recurNumber);
+        setRecurNumber(0);
     }
     private void setRecurDays(int[] recurDays) {
         if (recurDays == null) {
